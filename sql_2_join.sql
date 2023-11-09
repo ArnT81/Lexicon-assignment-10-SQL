@@ -71,9 +71,8 @@ SELECT Name FROM city WHERE CountryCode= (SELECT CountryCode FROM city WHERE pop
 #
 #
 # 17: What are the city names in the country where Luanda is capital?
-SELECT city.Name FROM city LEFT JOIN country
-ON  city.countrycode = country.code
-WHERE CountryCode = (SELECT CountryCode FROM city WHERE Name = 'luanda');
+SELECT Name FROM city 
+WHERE CountryCode = (SELECT CountryCode FROM city INNER JOIN country ON city.Id = country.Capital WHERE city.Name = 'Luanda');
 #
 #
 # 18: What are the names of the capital cities in countries in the same region as the city named Yaren
