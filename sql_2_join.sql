@@ -63,7 +63,7 @@ WHERE Population BETWEEN 500 AND 600;
 #
 #
 # 15: What names of the cities are in the same country as the city with a population of 122199 (including the that city itself)
-SELECT Name FROM city WHERE CountryCode= (SELECT CountryCodeFROM city WHERE population = 122199);
+SELECT Name FROM city WHERE CountryCode= (SELECT CountryCode FROM city WHERE population = 122199);
 #
 #
 # 16: What names of the cities are in the same country as the city with a population of 122199 (excluding the that city itself)
